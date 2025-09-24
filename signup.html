@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Askify – Sign Up</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="signup-container">
+    <img src="Logo.png" alt="Askify Logo" class="logo" />
+    <h2>Create your Askify account</h2>
+    <form id="signup-form">
+      <input type="email" id="email" placeholder="Enter Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <p class="login-link">Already have an account? <a href="login.html">Log In</a></p>
+    <p><a href="reset.html">Forgot Password</a></p>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
+  <script src="firebase.js"></script>
+  <script type="module" src="signup.js"></script>
+
+</body>
+</html>

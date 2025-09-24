@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Askify - Chat</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="firebase.js">
+  <link rel="icon" href="Logo.png" />
+</head>
+<body class="dark-mode">
+
+  <button class="hamburger" id="hamburger">☰</button>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" id="close-btn">✖</button>
+    <div class="logo">
+      <img src="Logo.png" alt="Askify" />
+      <h2>Askify</h2>
+    </div>
+    <button class="new-chat">+ New Chat</button>
+    <div class="chat-history">
+      <!-- History items will be loaded here -->
+    </div>
+    <div class="bottom-links">
+      <button id="logout">Logout</button>
+      <small>&copy; 2025 Askify</small>
+    </div>
+  </div>
+ 
+  <!-- Chat Area -->
+  <div class="chat-container">
+    <div class="chat-header">
+      <h1>Askify</h1>
+      <p>Your personal AI assistant</p>
+    </div>
+
+    <div class="chat-box" id="chat-box">
+      <!-- Chat messages will go here -->
+    </div>
+
+    <!-- Chat Input -->
+    <form class="chat-input" id="chat-form">
+      <button type="button" id="voice-btn" class="voice-btn">🎙️</button>
+      <button type="button" id="stop-btn" class="stop-btn" style="display: none;">🛑</button>
+
+
+      <textarea id="user-input" placeholder="Send a message..." rows="1" required></textarea>
+      <button type="submit">➤</button>
+    </form>
+  </div>
+
+  <script>
+  const hamburger = document.getElementById("hamburger");
+  const sidebar = document.getElementById("sidebar");
+  const closeBtn = document.getElementById("close-btn");
+
+  if (hamburger && sidebar) {
+    hamburger.addEventListener("click", () => {
+      sidebar.classList.add("active");
+    });
+  }
+
+  if (closeBtn && sidebar) {
+    closeBtn.addEventListener("click", () => {
+      sidebar.classList.remove("active");
+    });
+  }
+
+
+
+
+
+
+  
+
+  </script>
+  
+
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>

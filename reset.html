@@ -1,18 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Askify – Reset Password</title>
-  <link rel="stylesheet" href="reset.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Askify | Reset Password</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
-<body>
-  <div class="login-container">
-    <img src="Logo.png" alt="Askify Logo" class="logo" />
-    <h2>Reset Your Password</h2>
-    <form id="forgotForm">
-        <input type="email" id="email" placeholder="Enter Your Email" required>
-        <button type="submit">Send Reset Link</button>
-    </form>
-    <script type="module" src="firebase.js"></script>
-    <script type="module" src="reset.js"></script>
+
+<body class="dark-theme">
+  <div class="cosmic-bg"></div>
+
+  <main class="flex-center" style="height: 100vh; padding: 20px;">
+    <div class="login-container glass-panel" style="padding: 40px; width: 100%; max-width: 400px; opacity: 0;">
+      <div style="text-align: center; margin-bottom: 32px;">
+        <img src="Logo.png" alt="Askify Logo" style="width: 48px; height: auto; margin-bottom: 16px;" />
+        <h2 style="font-size: 1.5rem; color: var(--text-white);">Reset password</h2>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">Enter your email to receive a link</p>
+      </div>
+
+      <form id="forgotForm">
+        <div class="input-group">
+          <input type="email" id="email" placeholder=" " required />
+          <label for="email" class="floating-label">Email Address</label>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 8px; font-weight: 600;">Send Reset
+          Link</button>
+      </form>
+
+      <div style="margin-top: 32px; text-align: center;">
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Remember your password? <a href="login.html"
+            style="color: var(--text-white); text-decoration: none; font-weight: 500; border-bottom: 1px solid var(--border);">Sign
+            In</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    window.addEventListener('load', () => {
+      gsap.to('.login-container', {
+        opacity: 1,
+        y: -10,
+        duration: 0.8,
+        ease: 'power3.out'
+      });
+    });
+  </script>
+
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="reset.js"></script>
+</body>
+
+</html>

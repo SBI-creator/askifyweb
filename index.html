@@ -1,17 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Askify</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Askify | Your AI Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
+
 <body class="dark-theme">
-  <div class="splash-container">
-    <img src="Logo.png" alt="Askify Logo" class="logo">
-    <h1>Welcome to <span class="highlight">Askify</span></h1>
-    <p class="tagline">Your personal AI assistant</p>
-    <a href="signup.html" class="glow-button">Get Started</a>
-  </div>
+    <div class="cosmic-bg"></div>
+
+    <main class="flex-center" style="height: 100vh; padding: 20px;">
+        <div class="splash-container glass-panel"
+            style="padding: 48px; max-width: 440px; opacity: 0; text-align: center;">
+            <img src="Logo.png" alt="Askify Logo" style="width: 64px; height: auto; margin-bottom: 24px;">
+            <h1 style="font-size: 2rem; margin-bottom: 12px; color: var(--text-white);">Think with <span
+                    class="highlight">Askify</span></h1>
+            <p style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 32px; line-height: 1.6;">
+                The clean, fast, and professional AI assistant built for productive workflows.
+            </p>
+
+            <div style="margin-bottom: 24px;">
+                <a href="signup.html" class="btn-primary" style="width: 100%; font-size: 1rem; padding: 14px;">Get
+                    Started</a>
+            </div>
+
+            <div class="login-link">
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                    Already have an account? <a href="login.html"
+                        style="color: var(--text-white); text-decoration: none; font-weight: 500; border-bottom: 1px solid var(--border);">Sign
+                        In</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script type="module">
+        import { isAuthenticated } from "./firebase.js";
+        if (isAuthenticated()) {
+            window.location.href = "dashboard.html";
+        }
+    </script>
+    <script>
+        window.addEventListener('load', () => {
+            gsap.to('.splash-container', {
+                opacity: 1,
+                y: -20,
+                duration: 0.8,
+                ease: 'power3.out',
+                delay: 0.2
+            });
+        });
+    </script>
 </body>
+
 </html>

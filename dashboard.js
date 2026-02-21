@@ -225,10 +225,8 @@ async function saveMessage(userId, sender, text) {
 }
 
 // ================== API Keys ==================
-// [IMPORTANT]: Add your API keys here or use environment variables
-const groqKey = "";
-const tavilyKey = "";
-
+const groqKey = "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";
+const tavilyKey = "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";
 
 // ================== API Helpers ==================
 async function askTavily(query) {
